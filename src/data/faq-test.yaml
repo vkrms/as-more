@@ -1,0 +1,12 @@
+faq:
+  group1:
+    - q: 'lorem'
+      a: 'ipsum'
+
+  group2:
+    - q: 'lorem'
+      a: 'ipsum'
+
+  group3:
+    - q: 'lorem'
+      a: 'ipsum'

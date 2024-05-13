@@ -1,0 +1,39 @@
+/* Core variables */
+@import 'base/vars';
+
+/* CSS Reset */
+@import 'base/reset';
+
+/* CSS print */
+@import 'base/print';
+
+/* Fonts */
+@import 'base/fonts';
+
+/* Mixins, helpers and functions */
+@import 'base/mixins';
+
+/* Vendor */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import '~simplebar/dist/simplebar.css';
+
+/* Components */
+
+/* Page styles */
+@import 'buttons';
+@import 'styles';
+@import 'header';
+@import 'hero';
+@import 'cloud';
+@import 'animation';
+@import 'slider';
+@import 'support';
+@import 'chat+tooltips';
+@import 'audio';
+@import 'login';
+@import 'footer';
+@import 'static';
+@import 'locals';
+@import 'faq';
+@import 'auth+payment';

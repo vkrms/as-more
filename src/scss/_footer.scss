@@ -1,0 +1,42 @@
+.footer {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: vw(24px);
+  font-size: vw(13px);
+  background: #141414;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+
+  @include xsmall {
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: vw2(40px);
+    font-size: vw2(17px);
+  }
+
+  @include small {
+    padding: 40px;
+    font-size: 17px;
+  }
+
+  &__logo {
+    width: vw(134px);
+    margin-bottom: vw(16px);
+
+    @include xsmall {
+      width: vw2(153px);
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+      opacity: .64;
+    }
+  }
+}

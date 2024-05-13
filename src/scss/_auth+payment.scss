@@ -1,0 +1,166 @@
+.auth {
+  padding: vw(32px) vw(22px);
+  margin-bottom: vw(48px);
+  background:
+    linear-gradient(90deg, rgba(162, 102, 235, 0.1) 0%,
+    rgba(32, 160, 255, 0.1) 100%),
+    #141414;
+  border-radius: vw(10px);
+
+  @include xsmall {
+    padding: vw2(32px) vw2(22px);
+    margin-bottom: vw2(48px);
+    border-radius: vw2(10px);
+  }
+
+  @include small {
+    padding: 32px 40px;
+  }
+
+  &__disclaimer {
+    max-width: vw(256px);
+    margin: 0 auto;
+    font-size: vw(11px);
+
+    @include xsmall {
+      max-width: vw2(256px);
+      font-size: vw2(11px);
+    }
+
+    @include small {
+      max-width: 256px;
+      font-size: 11px;
+    }
+  }
+}
+
+.common-bg-container {
+  position: relative;
+
+  @include small {
+    .blue-glow {
+      position: absolute;
+      right: 0;
+      bottom: -20vh;
+      z-index: 4;
+      width: 649px;
+      height: 1547px;
+      pointer-events: none;
+      background: image-set(
+      url('../images/design/payment-bg.webp') 1x,
+      url('../images/design/payment-bg@2x.webp') 2x) right bottom no-repeat;
+    }
+  }
+}
+
+.payment {
+  position: relative;
+  z-index: 4;
+  scroll-margin-top: 150px;
+
+  @include small {
+    padding: 0 0 120px;
+  }
+
+  .container {
+    max-width: vw(900px);
+    padding: 0 vw(16px);
+
+    @include xsmall {
+      max-width: vw2(900px);
+      padding: 0 vw2(16px);
+    }
+
+    @include small {
+      max-width: 900px;
+      padding: 0 16px;
+    }
+  }
+
+  &__p {
+    margin-bottom: 32px;
+  }
+
+  &__text {
+    max-width: vw(380px);
+    margin: 0 auto vw(24px);
+
+    @include xsmall {
+      max-width: vw2(380px);
+      margin: 0 auto vw2(24px);
+    }
+
+    @include small {
+      max-width: 380px;
+      margin-bottom: 0;
+
+      &.--left {
+        position: sticky;
+        top: calc(50% - 272px / 2);
+      }
+    }
+  }
+
+  &__content {
+    margin: 0 auto;
+
+    @include small {
+      &.--right {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__flex {
+    flex-flow: column;
+
+    @include small {
+      flex-flow: row;
+    }
+  }
+
+  &__img {
+    display: none;
+    margin: 0 auto;
+    opacity: 0.2;
+
+
+    &.--google {
+      display: block;
+      width: 100%;
+    }
+
+    &.--desktop {
+      @include small {
+        display: block;
+      }
+    }
+
+    .apple & {
+      &.--apple {
+        display: block;
+        width: 100%;
+      }
+
+      &.--google {
+        display: none;
+      }
+    }
+
+    &.--mobile {
+      @include small {
+        display: none !important;
+      }
+    }
+
+    &-wrap {
+      margin-bottom: 48px;
+      border-radius: 8px;
+
+      @include small {
+        margin-bottom: 0;
+        background: #1a1b1e;
+      }
+    }
+  }
+}

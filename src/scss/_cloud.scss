@@ -1,0 +1,195 @@
+.cloud {
+  &__feature {
+    max-width: vw(357px);
+    padding: vw(16px);
+    margin-bottom: vw(8px);
+    font-size: vw(16px);
+    line-height: 1.4;
+    background: linear-gradient(90deg, rgba(162, 102, 235, 0.1) 0%, rgba(32, 160, 255, 0.1) 100%);
+    border-radius: vw(14px);
+    // opacity: 0;
+    transition: all .3s;
+
+    @include xsmall {
+      position: absolute;
+      max-width: vw2(357px);
+      padding: vw2(24px);
+      padding: vw2(16px);
+      margin-bottom: vw2(8px);
+      font-size: vw2(18px);
+      font-size: vw2(16px);
+      border-radius: vw2(14px);
+    }
+
+    @include small {
+      max-width: 357px;
+      padding: 24px;
+      padding: 16px;
+      margin-bottom: 8px;
+      font-size: 18px;
+      font-size: 16px;
+      border-radius: 14px;
+    }
+
+    &::before {
+      display: block;
+      width: vw(32px);
+      height: vw(32px);
+      margin-bottom: vw(10px);
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include xsmall {
+        width: vw2(32px);
+        height: vw2(32px);
+        margin-bottom: vw2(10px);
+      }
+
+      @include small {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 10px;
+      }
+    }
+
+    &.--percent::before {
+      content: '';
+      background-image: url('../images/content/percent.svg')
+    }
+
+    &.--shield::before {
+      content: '';
+      background-image: url('../images/content/shield.svg')
+    }
+
+    &:nth-child(1) {
+      left: 0;
+    }
+
+    &:nth-child(2) {
+      top: vw2(90px);
+      right: 0;
+    }
+
+    &s {
+      position: relative;
+      width: 100%;
+      max-width: vw(700px);
+
+      @include xsmall {
+        max-width: vw2(700px);
+        height: vw2(320px);
+      }
+
+      @include small {
+        max-width: 700px;
+        height: 320px;
+      }
+    }
+  }
+
+  &__content {
+    z-index: 1;
+    width: 100%;
+    max-width: vw(700px);
+    margin: 0 auto;
+
+    @include xsmall {
+      max-width: vw2(700px);
+    }
+
+    @include small {
+      align-self: flex-end;
+      max-width: 700px;
+    }
+
+    .section__title {
+      margin: 0 auto vw(16px);
+      font-size: vw(20px);
+      white-space: nowrap;
+
+      @include xsmall {
+        margin: 0 auto vw2(32px);
+        font-size: vw2(48px);
+      }
+
+      @include small {
+        margin: 0 auto 24px;
+        font-size: 48px;
+      }
+
+      icon {
+        height: 0.9em;
+        vertical-align: -1px;
+
+        @include xsmall {
+          height: 0.584em;
+          vertical-align: vw2(-2px);
+        }
+
+        @include small {
+          vertical-align: -2px;
+        }
+      }
+    }
+
+    &-wrap {
+      max-width: 544px;
+      margin: 0 auto 24px;
+
+      @include xsmall {
+        margin-bottom: 24px;        
+      }
+    }
+  }
+
+  .scene {
+    position: static;
+    top: -18vw;
+    flex-flow: column;
+    overflow: visible;
+
+    @include xsmall {
+      position: sticky;
+      top: 0;
+    }
+
+    &__text {
+      position: static;
+
+      @include xsmall {
+        padding-top: 30vmin;
+      }
+    }
+  }
+
+  .feature__h3 {
+    margin-bottom: vw(12px);
+    font-size: vw(18px);
+    font-weight: 800;
+    line-height: 1.2;
+
+    @include xsmall {
+      margin-bottom: vw2(12px);
+      font-size: vw2(24px);
+    }
+
+    @include small {
+      margin-bottom: 12px;
+      font-size: 24px;
+    }
+  }
+
+  .feature__p {
+    margin-bottom: 0;
+    font-size: vw(15px);
+
+    @include xsmall {
+      font-size: vw2(18px);
+    }
+
+    @include small {
+      font-size: 18px;
+    }
+  }
+} // .cloud end

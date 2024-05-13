@@ -1,0 +1,105 @@
+.audio {
+  display: flex;
+  align-items: center;
+  width: 216px;
+  max-width: none;
+  height: 64px;
+
+//   @include xsmall {
+//     width: vw2(320px);
+//     height: vw2(72px);
+//   }
+
+  @include small {
+    width: 320px;
+    height: 72px;
+  }
+
+  &__icon {
+    transition: all .3s;
+
+    &.--play {
+      transform: translateX(3px);
+    }
+
+    .--play &.--pause {
+      opacity: 0;
+    }
+
+    .--pause &.--play {
+      opacity: 0;
+    }
+  }
+
+  &__wave {
+    flex: 1;
+    width: 144px;
+    height: 24px;
+    clip-path: url("#wave2_clip");
+    background: #fff;
+
+//     @include xsmall {
+//       height: vw2(40px);
+//     }
+
+    @include small {
+      height: 40px;
+    }
+  }
+
+  &__progress {
+    width: 0;
+    height: 100%;
+    background: #862E5B;
+  }
+
+  &__btn {
+    display: block;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin-right: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+    border-radius: 100%;
+    outline: none;
+    fill: #F178B6;
+    transition: all .3s;
+    appearance: none;
+
+//     @include xsmall {
+//       width: vw2(48px);
+//       height: vw2(48px);
+//     }
+
+    @include small {
+      width: 48px;
+      height: 48px;
+    }
+
+    &:hover {
+      background-color: #EF5DA8;
+      fill: #fff;
+    }
+
+    &:active {
+      background-color: #C12375;
+      fill: #fff;
+    }
+
+    &-icon {
+      width: 100%;
+      height: 100%;
+      padding: 12px;
+
+//       @include xsmall {
+//         padding: vw2(14px);
+//       }
+
+      @include small {
+        padding: 14px;
+      }
+    }
+  }
+}

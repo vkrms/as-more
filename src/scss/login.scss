@@ -1,0 +1,331 @@
+.login {
+  background:
+    url("../images/design/login-flare.svg") bottom right,
+    url("../images/design/login-bg.svg");
+  background-size: cover;
+
+  @include xsmall {
+    max-width: vw2(800px);
+    margin: auto;
+    background:
+      image-set(
+        url("../images/design/modal-bg.jpg") 1x,
+        url("../images/design/modal-bg@2x.jpg") 2x,
+      );
+    background-size: cover;
+    border-radius: vw2(14px);
+  }
+
+  @include small {
+    max-width: 800px;
+    // max-height: 450px;
+    border-radius: 14px;
+  }
+
+  &__h1 {
+    margin-bottom: vw(40px);
+    font-family: 'Stapel', sans-serif;
+    font-size: vw(32px);
+    font-weight: 800;
+
+    @include xsmall {
+      max-width: vw2(584px);
+      margin-bottom: vw2(40px);
+      font-size: vw2(40px);
+    }
+
+    @include small {
+      max-width: 584px;
+      font-size: 40px;
+    }
+
+    .nowrap {
+      display: inline-block;
+      margin-top: 24px;
+    }
+  }
+
+  &__p {
+    margin-bottom: 24px;
+    font-size: 17px;
+    line-height: 1.3;
+
+    @include xsmall {
+      max-width: vw2(480px);
+    }
+
+//     @include small {
+//       max-width: 480px;
+//     }
+  }
+
+  &__option {
+    position: relative;
+    display: block;
+    width: vw(64px);
+    height: vw(40px);
+    padding: vw(8px) vw(20px);
+    cursor: pointer;
+    background: #000;
+    border-radius: vw(6px);
+    transition: all .3s;
+    object-fit: contain;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display:  block;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: rgba(17, 33, 56, 0.12);
+      opacity: 0;
+      transition: all .3s;
+    }
+
+    @include xsmall {
+      width: vw2(64px);
+      height: vw2(40px);
+      padding: vw2(8px) vw2(20px);
+      border-radius: vw2(6px);
+    }
+
+    @include small {
+      width: 64px;
+      height: 40px;
+      padding: 8px 20px;
+      border-radius: 6px;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &:active {
+      background: #5d5fef;
+    }
+
+    &.--facebook {
+      &::before {
+        content: url("../images/design/fb.svg");
+      }
+      background: #3C5A99;
+    }
+
+    &.--twitter {
+      &::before {
+        content: url("../images/design/twitter.svg");
+      }
+      background: #41ABE1;
+    }
+
+    &.--ok {
+      &::before {
+        content: url("../images/design/ok.svg");
+      }
+      background: #F98D20;
+    }
+
+    &.--yandex {
+      &::before {
+        content: url("../images/design/yandex.svg");
+      }
+      background: #DA3332;
+    }
+
+    &.--mail_ru {
+      &::before {
+        content: url("../images/design/mail.svg");
+      }
+      background: #2063F0;
+    }
+
+    &.--apple {
+      &::before {
+        content: url("../images/design/apple.svg");
+      }
+      background: #000;
+    }
+
+    &.--wide {
+      width: vw(210px);
+      padding: vw(8px);
+      margin: 0 auto vw(8px);
+      font-size: vw(15px);
+      font-weight: 600;
+      color: #5A6472;
+      white-space: nowrap;
+      background: #FFFFFF;
+      border: 1px solid #E1E5EC;
+      border-radius: vw(4px);
+
+      @include xsmall {
+        width: vw2(210px);
+        padding: vw2(8px);
+        margin: 0 auto vw2(8px);
+        font-size: vw2(15px);
+        border-radius: vw2(4px);
+      }
+
+      @include small {
+        width: 210px;
+        padding: 8px;
+        margin: 0 auto 8px;
+        font-size: 15px;
+        border-radius: 4px;
+      }
+
+      &::before {
+        display: inline-block;
+        width: vw(24px);
+        height: vw(24px);
+        margin-right: vw(8px);
+        vertical-align: vw(-6px);
+
+        @include xsmall {
+          width: vw2(24px);
+          height: vw2(24px);
+          margin-right: vw2(8px);
+          vertical-align: vw2(-6px);
+        }
+
+        @include small {
+          width: 24px;
+          height: 24px;
+          margin-right: 8px;
+          vertical-align: -6px;
+        }
+      }
+
+      &.--google {
+        &::before {
+          content: url("../images/design/google.svg");
+        }
+      }
+
+      &.--vk {
+        &::before {
+          content: url("../images/design/vk.svg");
+        }
+      }
+    }
+  }
+
+  &__options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, vw(64px));
+    grid-gap: vw(8px);
+    max-width: vw(210px);
+    margin: 0 auto vw(24px);
+
+
+    @include xsmall {
+      grid-template-columns: repeat(auto-fill, vw2(64px));
+      grid-gap: vw2(8px);
+      max-width: vw2(210px);
+      margin: 0 auto vw2(24px);
+    }
+
+    @include small {
+      grid-template-columns: repeat(auto-fill, 64px);
+      grid-gap: 8px;
+      max-width: 210px;
+      margin: 0 auto 24px;
+    }
+  }
+}
+
+.disclaimer__link {
+  color: #1781f3;
+  transition: all .3s;
+
+  &:hover {
+    opacity: .7;
+  }
+}
+
+
+.modal {
+  position: relative;
+  padding: 80px 20px 60px;
+  background-color: #141414;
+
+  @include xsmall {
+    width: vw2(800px);
+    height: fit-content;
+    padding: vw2(70px) vw2(50px) vw2(16px);
+  }
+
+  @include small {
+    padding: 70px 50px 50px;
+  }
+
+  &-fade {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    background-image:
+      image-set(
+        url('../images/design/modal-fade-bg.jpg') 1x,
+        url('../images/design/modal-fade-bg@2x.jpg') 2x);
+    background-size: cover;
+    opacity: 0;
+    transition: all 0.3s;
+    will-change: opacity;
+
+    &.--open {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+
+  &__close {
+    position: absolute;
+    top: 40px;
+    right: 24px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    color: #fff;
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    @include xsmall {
+      right: vw2(40px);
+    }
+
+    @include small {
+      right: 40px;
+    }
+
+    &::before {
+      content: url("../images/design/cross.svg");
+    }
+  }
+
+  &__button {
+    width: 100%;
+    max-width: 248px;
+    height: 48px;
+    padding: 0 16px;
+    font-family: Inter;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+  }
+}

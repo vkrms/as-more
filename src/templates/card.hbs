@@ -1,0 +1,15 @@
+{{#each cards}}
+<div class="slider-slide card --{{this.color}} --oscillate">
+    <div class="card__tint"></div>
+    <div class="card__branding">
+      <img srcset="{{this.logo}}" class="card__logo">
+      <span class="card__title">{{this.title}}</span>
+    </div>
+    <div class="card__percents">
+      {{this.percents}}
+    </div>
+    <p class="card__text">
+      {{{this.text}}}
+    </p>
+</div>
+{{/each}}

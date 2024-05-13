@@ -1,0 +1,65 @@
+.header {
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: vw(40px) vw(20px);
+
+  @include xsmall {
+    position: absolute;
+    top: 0;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: vw2(50px) vw2(40px) 0;
+  }
+
+  @include small {
+    padding: 50px 40px;
+  }
+
+  &__logo {
+    display: inline-block;
+    width: vw(224px);
+    height: auto;
+
+    &-img {
+      width: vw(300px);
+    }
+
+    @include xsmall {
+      width: vw2(300px);
+
+      &-img {
+        width: 100%;
+      }
+    }
+
+    @include small {
+      width: 300px;
+      height: 32px;
+      margin-top: 5px;
+
+      &-img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__subscribe {
+    display: none;
+
+    @include xsmall {
+      display: block;
+      margin-left: auto;
+    }
+  }
+
+  &-controls {
+    display: none;
+
+    @include small {
+      display: flex;
+    }
+  }
+}

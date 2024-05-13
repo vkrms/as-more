@@ -1,0 +1,340 @@
+.btn {
+    position: relative;
+    display: inline-block;
+    width: min-content;
+    min-width: vw(280px);
+    max-width: vw(376px);
+    height: vw(48px);
+    padding: vw(13px) vw(16px);
+    overflow: hidden;
+    font-size: vw(17px);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #1781f3;
+    background: linear-gradient(90deg, #A266EB 0%, #20A0FF 100%);
+    border-radius: vw(10px);
+
+    @include xsmall {
+      min-width: 0;
+      min-width: vw2(280px);
+      height: vw2(56px);
+      padding: 0 vw2(32px);
+      font-size: vw2(18px);
+      line-height: vw2(56px);
+      border-radius: vw2(10px);
+    }
+
+    @include small {
+      min-width: 280px;
+      height: 56px;
+      padding: 0 32px;
+      font-size: 18px;
+      line-height: 56px;
+      border-radius: 10px;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      transition: all .3s;
+    }
+
+    &:hover::after {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    &:active::after {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    &.--subscribe {
+      position: relative;
+      z-index: 3;
+      display: block;
+      width: fit-content;
+      min-width: 280px;
+      height: vw(48px);
+      padding: 0 vw(16px);
+      font-size: vw(15px);
+      font-weight: 600;
+      line-height: vw(48px);
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+      background: linear-gradient(90deg, #A266EB 0%, #20A0FF 100%);
+      background-color: grey;
+      border-radius: vw(10px);
+      margin: 0 auto;
+
+      @include xsmall {
+        height: vw2(48px);
+        padding: 0 vw2(16px);
+        font-size: vw2(15px);
+        font-weight: 600;
+        line-height: vw2(48px);
+        border-radius: vw2(10px);
+      }
+
+      @include small {
+        height: 48px;
+        padding: 0 16px;
+        font-size: 15px;
+        line-height: 48px;
+        border-radius: 10px;
+      }
+
+      s {
+        margin-left: 0.5em;
+        font-size: 80%;
+        font-weight: 500;
+        vertical-align: 0.1em;
+      }
+
+      &.--stack {
+        width: 100%;
+        min-width: 0;
+        padding: vw(10px) vw(16px);
+        line-height: 1.2;
+
+        @include xsmall {
+          padding: vw2(10px) vw2(16px);
+        }
+
+        @include small {
+          padding: 10px 16px;
+        }
+      }
+    }
+
+    &.--subscribe2 {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        padding: 0 vw(13px);
+        font-size: vw(15px);
+        line-height: 15vw;
+        font-weight: 600;
+
+        @include xsmall {
+          height: vw2(72px);
+          padding: 0 vw2(40px);
+          font-size: vw2(22px);
+          line-height: vw2(72px);
+        }
+
+        @include small {
+          height: 72px;
+          padding: 0 40px;
+          font-size: 22px;
+          line-height: 72px;
+        }
+    }
+
+    &__small {
+      display: block;
+      font-size: vw(9px);
+      text-decoration: line-through;
+
+      @include xsmall {
+        font-size: vw2(9px);
+      }
+
+      @include small {
+        font-size: 9px;
+      }
+    }
+
+    .--large &__small {
+      font-size: 14px;
+    }
+
+    &.cta-after-slider {
+      display: none;
+      margin: 0 auto;
+
+      @include xsmall {
+        display: block;
+      }
+    }
+
+    &.--pay {
+      font-size: 17px;
+      font-weight: 600;
+    }
+}
+
+
+.support__button {
+  display: none;
+
+  @include xsmall {
+    display: inherit;
+    margin-top: vw2(32px);
+  }
+
+  @include small {
+    margin-top: 32px;
+  }
+}
+
+.mobile-subscribe {
+  @include xsmall {
+    display: none;
+  }
+}
+
+.subscribe-info {
+  margin: vw(8px) auto 0;
+  font-size: vw(9px);
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+
+  @include xsmall {
+    margin: vw2(8px) auto 0;
+    font-size: vw2(11px);
+  }
+
+  @include small {
+    margin: 8px auto 0;
+    font-size: 11px;
+  }
+
+  &.--header {
+    display: none;
+
+    @include small {
+      display: block;
+//       max-width: 200px;
+      font-size: 11px;
+    }
+  }
+
+  &.-wallet {
+    // sup
+  }
+}
+
+.controls {
+  display: flex;
+  flex-flow: row;
+//   justify-content: space-between;
+
+  @include xsmall {
+    padding: 0 vw2(10px);
+  }
+
+  @include small {
+    padding: 0 10px;
+  }
+
+  &__col {
+    &.--gift {
+      margin-right: 10px;
+
+      &.--large {
+        display: none;
+
+        @include small {
+          display: block;
+        }
+      }
+    }
+
+    &.--subscribe {
+      flex: 0 1 360px;
+
+      &.--large {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .btn.--gift {
+    display: block;
+    width: vw(48px);
+    min-width: 0;
+    height: vw(48px);
+    padding: vw(12px);
+
+    @include xsmall {
+      width: vw2(48px);
+      height: vw2(48px);
+      padding: vw2(12px);
+    }
+
+    @include small {
+      width: 48px;
+      height: 48px;
+      padding: 12px;
+      line-height: normal;
+    }
+
+    &::before {
+      display: block;
+      width: vw(24px);
+      height: vw(24px);
+      content: url('../images/design/gift.svg');
+
+      @include xsmall {
+        width: vw2(24px);
+        height: vw2(24px);
+      }
+
+      @include small {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &.--gradient {
+      padding: 0;
+      background-image: url('../images/design/gift-btn.svg');
+      background-size: contain;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+
+      &::before {
+        display: none;
+      }
+
+      &.--large {
+        width: 72px;
+        height: 72px;
+        background-image: url('../images/design/gift-btn-72.svg');
+      }
+    }
+  }
+}
+
+.sticky-controls {
+  position: fixed;
+  right: 0;
+  bottom: vw(8px);
+  left: 0;
+  z-index: 5;
+  padding: 0 vw(10px);
+  margin: 0 auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.5, 2);
+  transform: translateY(136%);
+
+  &.--available {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @include xsmall {
+    display: none;
+    padding: 0 vw2(10px);
+  }
+}

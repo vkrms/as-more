@@ -1,0 +1,48 @@
+cards:
+  - logo: ../more-premium/images/content/partners/ostrovok.svg
+    title: Ostrovok.ru
+    percents: 7%
+    text: бронирование<br>отелей
+    color: blue
+
+  - logo: ../more-premium/images/content/partners/tvil.svg
+    title: Tvil.ru
+    percents: 10%
+    text: бронирование отелей<br>и квартир
+    color: salmon
+
+  # - logo: ../images/content/partners/ekta.svg
+  #   title: EKTA
+  #   percents: 30%
+  #   text:  туристическая<br>страховка
+  #   color: teal
+
+  - logo: ../more-premium/images/content/partners/chere.svg
+    title: Cherehapa
+    percents: 15%
+    text: туристическая<br>страховка
+    color: purple
+
+  - logo: ../more-premium/images/content/partners/compensair.svg
+    title: Compensair
+    percents: 10%
+    text: услуги защиты прав<br>авиапассажиров
+    color: blue
+
+  - logo: ../more-premium/images/content/partners/kiwitaxi.svg
+    title: Kiwitaxi
+    percents: 10%
+    text: трансферы из аэропортов<br>и отелей
+    color: purple
+
+  - logo: ../more-premium/images/content/partners/parknfly.svg
+    title: Park & Fly
+    percents: 10%
+    text: парковка в аэропортах<br>Москвы
+    color: blue
+
+  - logo: ../more-premium/images/content/partners/tiqets.svg
+    title: Tiqets
+    percents: 7%
+    text: билеты в музеи, шоу<br>и аттракционы
+    color: salmon

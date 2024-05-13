@@ -1,0 +1,169 @@
+// CHAT & TOOLTIPS
+
+.chat {
+  position: relative;
+  display: flex;
+  flex: 0 1 304px;
+  flex-flow: row;
+  align-items: flex-start;
+  align-self: flex-start;
+  margin-left: auto;
+
+  @include xsmall {
+    position: absolute;
+    bottom: 57%;
+    left: 45%;
+    z-index: 1;
+  }
+
+  @include small {
+  }
+
+  &__wrapper {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    z-index: 2;
+    width: 100vmin;
+    max-width: 1000px;
+    height: 100vmin;
+    max-height: 1000px;
+  }
+
+  &__messages {
+    flex-grow: 0;
+    transition: all .3s;
+  }
+
+  &__message.tooltip {
+    width: 232px;
+    min-height: 48px;
+    margin-bottom: 4px;
+    margin-left: 16px;
+
+    &::after {
+      right: auto;
+      left: 16px;
+      content: url("../images/design/bubble_point_chat.svg");
+    }
+  }
+
+  &__avatar {
+    display: none;
+    width: 32px;
+    height: 32px;
+    margin: auto 0 4px auto;
+
+    @include xsmall {
+      width: vw2(48px);
+      height: vw2(48px);
+    }
+
+    @include small {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+
+.tooltip {
+  position: relative;
+  width: 100%;
+  max-width: 232px;
+  padding: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  line-height: 1.22;
+  letter-spacing: 0.015em;
+  background: linear-gradient(86.49deg, #F178B6 16.13%, #7F46F8 98.58%);
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px rgba(241, 120, 182, 0.1), 0px 10px 20px rgba(241, 120, 182, 0.2);
+  opacity: 0;
+  transition: all 0.2s cubic-bezier(1, 2.00, 0.8, 1.2);
+
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 14px;
+    left: 0;
+    z-index: -1;
+    width: 14px;
+    height: 14px;
+    margin: 0 auto;
+    content: url("../images/design/bubble_point.svg");
+    transition: all .3s;
+    transform: rotate(-90deg);
+  }
+
+  &:last-of-type::after {
+    bottom: -7px;
+  }
+
+  &.--appear {
+    opacity: 1;
+    transform: none;
+  }
+
+  @include xsmall {
+    font-size: 10px;
+  }
+
+  @include small {
+    font-size: 12px;
+  }
+}
+
+.locals__tooltip {
+  position: absolute;
+  z-index: auto;
+  max-width: 192px;
+
+  &::after {
+    bottom: -7px;
+  }
+
+  &.audio {
+    top: 47%;
+    left: 3%;
+  }
+
+  &.--two {
+    top: 50%;
+    left: 46%;
+  }
+
+  &.--three {
+    top: 31%;
+    right: 16%;
+  }
+
+  &.--four {
+    top: 48%;
+    right: 7%;
+  }
+}
+
+.locals__tooltips {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: 1000px;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100vmin;
+  margin: auto;
+  overflow: hidden;
+
+  @include xsmall {
+    top: 0;
+  }
+
+  @include small {
+    top: 0;
+    bottom: auto;
+    min-height: 800px;
+  }
+}

@@ -1,0 +1,41 @@
+.support {
+  &__p {
+    margin-bottom: 0;
+  }
+
+  .scene {
+    background:
+      image-set(
+        url("../images/design/support-bg-1.webp") 1x,
+        url("../images/design/support-bg-1@2x.webp") 2x) left top no-repeat;
+
+    @include medium {
+      background:
+        image-set(
+          url("../images/design/support-bg-1.webp") 1x,
+          url("../images/design/support-bg-1@2x.webp") 2x) left top no-repeat,
+        image-set(
+          url("../images/design/support-bg-2.webp") 1x,
+          url("../images/design/support-bg-2@2x.webp") 2x) right bottom no-repeat;
+    }
+
+    &__text {
+      position: relative;
+      z-index: 1;
+
+      @include xsmall {
+        position: absolute;
+        z-index: 2;
+        padding-bottom: 9vw;
+      }
+    }
+  }
+
+  @include portrait {
+    @include xsmall {
+      &__content {
+        margin: 15vh auto auto;
+      }
+    }
+  }
+}

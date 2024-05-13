@@ -1,0 +1,136 @@
+.locals {
+  z-index: 3;
+  background-color: transparent;
+
+  @include xsmall {
+    margin-top: vw2(-120px);
+  }
+
+  @include small {
+    margin-top: -64px;
+  }
+
+  &__glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../images/design/locals-glow.svg');
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transition: all .3s;
+    will-change: opacity;
+
+    &.--visible {
+      opacity: 1;
+    }
+  }
+
+  &__content {
+    z-index: 1;
+
+    @include xsmall {
+      position: absolute;
+      top: 0;
+      margin-top: 12vh;
+    }
+  }
+
+  .scene {
+    height: 100vh;
+    background:
+      image-set(
+        url("../images/design/locals-bg-static.webp") 1x,
+        url("../images/design/locals-bg-static@2x.webp") 2x) left bottom no-repeat;
+
+    @include xsmall {
+      // min-height: 810px;
+
+      background:
+        image-set(
+          url("../images/design/locals-bg.jpg") 1x,
+          url("../images/design/locals-bg@2x.jpg") 2x) left bottom no-repeat;
+    }
+
+    &__text {
+        position: absolute;
+        top: 0;
+        z-index: 2;
+        width: 100%;
+        height: 50vh;
+
+        @include xsmall {
+          height: inherit;
+          background: linear-gradient(transparent 70%, #141414);
+        }
+    }
+  }
+
+  .sequence-container {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+  }
+
+  &__canvas {
+    padding: 0;
+  }
+
+  .container {
+      max-width: 1100px;
+  }
+
+
+  @include xsmall {
+    .section__flex {
+      width: 100vmin;
+      min-width: 816px;
+      max-width: 1000px;
+      min-height: 800px;
+      margin: auto;
+    }
+  }
+
+
+} // .locals end
+
+.last__content {
+  z-index: 2;
+  height: fit-content;
+
+  &.--wallet {
+
+
+    $pad-xs: 16px;
+    @include xsmall {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      width: 100vmin;
+      min-width: 0;
+      max-width: 100%;
+      height: 100vmin;
+      min-height: 0;
+      max-height: none;
+      padding: calc(14% + #{$pad-xs}) calc(8% + #{$pad-xs}) calc(24% + #{$pad-xs}) calc(11% + #{$pad-xs});
+      margin: auto;
+    }
+
+    $pad-s: 24px;
+    @include small {
+      top: 0;
+      min-width: 816px;
+      max-width: 1000px;
+      height: 100%;
+      min-height: 800px;
+      max-height: 1000px;
+      padding: calc(14% + #{$pad-s}) calc(8% + #{$pad-s}) calc(27% + #{$pad-s}) calc(12% + #{$pad-s});
+    }
+  }
+}

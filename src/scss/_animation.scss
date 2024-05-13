@@ -1,0 +1,358 @@
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.scene {
+  z-index: 2;
+  display: flex;
+  flex-flow: column-reverse;
+  height: auto;
+  overflow: hidden;
+}
+
+.--appear {
+  opacity: 0;
+  transition: all 0.45s;
+}
+
+.--fade-in-bottom {
+  animation: fade-in-bottom 0.45s ease-in-out forwards;
+
+  div.--appear {
+    opacity: 0;
+    transform: translateY(20%);
+    animation: fade-in-bottom 0.45s 0.25s ease-in-out forwards;
+  }
+}
+
+@keyframes fade-in-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sequence {
+  position: static;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 100vh;
+  padding: 0 20px 20px;
+  margin: auto;
+  background: none;
+  object-fit: contain;
+
+  @include small {
+    width: auto;
+  }
+}
+
+.sequence-container {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  margin: auto auto 0;
+  margin: 0 auto auto;
+
+
+  @include xsmall {
+    top: 0;
+    margin: auto;
+  }
+}
+
+.cloud {
+  height: auto;
+
+  @include xsmall {
+    height: 1900px;
+    margin-bottom: -30vh;
+  }
+
+  .sequence-container {
+    @include xsmall {
+      position: absolute;
+      right: 0;
+      left: 0;
+    }
+  }
+
+  &__canvas {
+    top: 0;
+    bottom: auto;
+    padding: 0;
+
+    @include xsmall {}
+
+    @include small {
+      box-sizing: content-box;
+      height: 70vh;
+      max-height: 563px;
+    }
+  }
+}
+
+.two {
+  height: 7300px;
+
+  @include small {
+  }
+
+  .sticky {
+    top: 0;
+    height: 100vh;
+  }
+}
+
+.pcr {
+  z-index: 3;
+  height: 5500px;
+
+  .scene {
+    justify-content: flex-end;
+
+    &__text {
+      position: relative;
+      z-index: 1;
+
+      @include xsmall {
+        position: absolute;
+      }
+    }
+  }
+
+  @include small {
+    &__content {
+      width: 50%;
+      min-width: 472px;
+    }
+  }
+
+  .sequence-container {
+    position: relative;
+    flex: 1 0 auto;
+  }
+
+  &__canvas {
+    position: absolute;
+    top: -50%;
+    bottom: -50%;
+    width: 100%;
+    max-height: 160vmin;
+    padding: 0;
+    margin: auto;
+    object-fit: none;
+
+    @include xsmall {
+      position: static;
+      max-width: 77vmin;
+      margin: auto 0 auto auto;
+      object-fit: contain;
+    }
+
+    @include small {
+      width: auto;
+      max-width: 100vmin;
+      max-height: 100vmin;
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+}
+
+.support {
+  z-index: 3;
+  height: 6000px;
+
+  @include small {
+    &__content {
+      width: 50%;
+      min-width: 424px;
+    }
+  }
+
+  .scene {
+    justify-content: flex-end;
+    min-height: 100vh;
+  }
+
+  .sequence-container {
+    position: relative;
+    margin: auto 0 0;
+
+    @include small {
+      margin: auto auto 0;      
+    }
+  }
+
+  &__canvas {
+    position: relative;
+    z-index: 0;
+    width: auto;
+    padding: 0;
+    margin: -10vh auto 0 0;
+
+    @include xsmall {
+      margin-top: auto;
+    }
+
+    @include small {
+      position: static;
+      z-index: auto;
+    }
+  }
+}
+
+.locals {
+  height: 6000px;
+
+  &__canvas {
+    padding-bottom: 0;
+
+    @include small {
+      min-height: 800px;
+    }
+  }
+}
+
+.scene__text {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px 0 0;
+
+  @include xsmall {
+    padding-top: 112px;
+  }
+
+  @include xsmall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: auto;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+}
+
+.--fade-out-top {
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  animation: fade-out-top 0.45s ease-in-out forwards;
+
+  @include xsmall {
+    top: auto;
+  }
+
+  div.--appear {
+    opacity: 1;
+    animation: fade-out-top 0.45s 0.25s ease-in-out forwards;
+  }
+}
+
+@keyframes fade-out-top {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+}
+
+.locals__subscribe {
+  &.--hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  visibility: visible;
+  opacity: 1;
+  transition: all .3s;
+}
+
+// SLIDER STUFF
+.--scroll-hor {
+  animation: scroll-hor 45s linear infinite;
+}
+
+@keyframes scroll-hor {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.--oscillate {
+  // animation: oscillate 3s ease-in-out infinite;
+}
+
+@keyframes oscillate {
+  25% {
+    transform: translateY(-var(--shiftY));
+  }
+
+  75% {
+    transform: translateY(var(--shiftY));
+  }
+}
+
+// pcr and dasha horizontal position tweak
+// @include small {
+//   @media (max-width: 1440px) {
+//     .pcr .sequence-container,
+//     .support .sequence-container {
+//       width: fit-content;
+//     }
+//
+//     .pcr__canvas {
+//       margin-right: -30%;
+//     }
+//
+//     .chat__wrapper {
+//       left: -30%;
+//     }
+//
+//     .support__canvas {
+//       margin-left: -30%;
+//     }
+//   }
+// }
+
+//another pcr & support tweak, this time it works
+@include small {
+  @media (max-width: 1524px) {
+    .pcr .sequence-container {
+      width: 114%;
+      max-width: 1164px;
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+
+  @media (max-width: 1144px) {
+    .support .sequence-container {
+      position: absolute;
+      right: 0;
+      width: 114%;
+      max-width: 1164px;
+      margin-right: auto;
+      margin-left: 0;
+    }
+  }
+}

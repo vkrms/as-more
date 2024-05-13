@@ -1,0 +1,69 @@
+/**
+ * Helper mixins
+*/
+
+// Clearfix
+// http://www.cssmojo.com/latest_new_clearfix_so_far/
+// Other clearfix options: https://github.com/stubbornella/oocss/blob/master/oocss/src/components/utils/_clearfix-me.scss
+@mixin clearfix {
+  &::after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
+// Media queries
+@mixin xsmall {
+  @media (min-width: $xsmall) { @content; }
+}
+
+@mixin small {
+  @media (min-width: $small) { @content; }
+}
+
+@mixin medium {
+  @media (min-width: $medium) { @content; }
+}
+
+@mixin portrait {
+  @media (orientation: portrait) { @content; }
+}
+
+// Text selection
+@mixin text-selection($color-selection, $color-selection-bg) {
+  ::-moz-selection { // sass-lint:disable-line no-vendor-prefixes
+    color: $color-selection;
+    text-shadow: none;
+    background: $color-selection-bg;
+  }
+
+  ::selection {
+    color: $color-selection;
+    text-shadow: none;
+    background: $color-selection-bg;
+  }
+}
+
+//Placeholders
+//Usage:
+//@include placeholder;
+@mixin placeholder {
+  // sass-lint:disable no-vendor-prefixes
+  ::-webkit-input-placeholder { @content; }
+  :-moz-placeholder { @content; }
+  ::-moz-placeholder { @content; }
+  :-ms-input-placeholder { @content; }
+}
+
+$vw-viewport: 320;
+@function vw($px) {
+  $vw-context: $vw-viewport * 0.01 * 1px;
+  @return calc($px / $vw-context * 1vw);
+}
+
+$vw-viewport-large: 1440;
+@function vw2($px) {
+  $vw-context: $vw-viewport-large * 0.01 * 1px;
+  @return calc($px / $vw-context * 1vw);
+}
