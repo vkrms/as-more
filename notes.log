@@ -1,3 +1,5 @@
 This projects should have used react with gatsby. I thought this project wouldn't even have routes so there's no need to use react at all. I bet in the end they thought I don't know shit about react.
 
 Also should have used react for the faq section or add it when it turned out we need the success screen.
+
+[ ] Gotta make this thing unindexable with robots.txt 

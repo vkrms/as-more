@@ -159,6 +159,7 @@ module.exports = {
         { from: 'src/images/content/', to: 'more-premium/images/content'},
         { from: 'src/audio', to: 'more-premium/audio' },
         { from: 'src/video', to: 'more-premium/video' },
+        { from: 'src/robots.txt', to: 'more-premium' }
       ]
     }),
   ].concat(htmlPluginEntries),
