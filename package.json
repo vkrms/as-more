@@ -53,7 +53,7 @@
     "yarn": "1.22.11"
   },
   "engines": {
-    "node": "^12 || >=14"
+    "node": "20.x"
   },
   "scripts": {
     "build": "webpack --config configuration/webpack.dev.config.js --mode=development",
